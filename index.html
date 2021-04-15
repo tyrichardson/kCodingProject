@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1>Guest Message Generator</h1>
+      </header>
+
+      <main id="container-form">
+        <form
+          id="guest-message-generator"
+          class="form-guest-messages"
+          action=""
+        >
+          <div id="div-guest-message-name">
+            <label
+              id="label-guest-message-name"
+              for="select-guest-message-name"
+              class="label-guest-messages"
+              >Please select your guest's name:
+            </label>
+            <select
+              name="select-guest-message-name"
+              id="select-guest-message-name"
+            >
+              <option value="Select">Select</option>
+            </select>
+          </div>
+
+          <div id="div-select-guest-message-location">
+            <label
+              id="label-guest-message-location"
+              for="select-guest-message-location"
+              class="label-guest-messages"
+              >Please select the location of their reservation:
+            </label>
+            <select
+              name="select-guest-message-location"
+              id="select-guest-message-location"
+            >
+              <option value="Select">Select</option>
+            </select>
+          </div>
+
+          <div id="div-select-guest-message-room-number">
+            <label
+              id="label-guest-message-room-number"
+              for="select-guest-message-room-number"
+              class="label-guest-messages"
+              >Please verify their room and date of arrival:
+            </label>
+            <select
+              name="select-guest-message-room-number"
+              id="select-guest-message-room-number"
+            >
+              <option value="Select">Select</option>
+            </select>
+          </div>
+
+          <div id="div-select-guest-message-type">
+            <label
+              id="label-guest-message-type"
+              for="select-guest-message-type"
+              class="label-guest-messages"
+              >Please select the message type to send your guest:
+            </label>
+            <select
+              name="select-guest-message-type"
+              id="select-guest-message-type"
+            >
+              <option value="Select">Select</option>
+            </select>
+          </div>
+
+          <div id="div-button-preview-message">
+            <button id="button-preview-message" class="button show-modal">
+              Preview Message
+            </button>
+            <input id="button-send-message" class="button" type="submit" value="Send Message"></input>
+          </div>
+        </form>
+      </main>
+
+      <div class="modal">
+        <p id="modal-message-text">Modal Message Text</p>
+        <button id="modal-button-close" class="button close-modal">
+          Close Preview
+        </button>
+      </div>
+
+      <div class="overlay"></div>
+    </div>
+
+    <script src="Guests.json" type="text/javascript"></script>
+    <script src="Companies.json" type="text/javascript"></script>
+    <script src="Messages.json" type="text/javascript"></script>
+    <script src="script.js" type="text/javascript"></script>
+  </body>
+</html>

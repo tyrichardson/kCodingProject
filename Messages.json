@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "type": "Reservation Made",
+    "message": "Good ${timeOfDay}, ${firstName}. Thank you for booking a stay at ${company} in ${city}. We will send you a message when Room ${roomNumber} is all ready for you to enjoy. In the meantime, please don't hesitate to reach out with any questions or concerns."
+  },
+  {
+    "id": 2,
+    "type": "Room Ready",
+    "message": "Good ${timeOfDay}, ${firstName}. Room ${roomNumber} here at ${company} is all ready for you. Please let us know if you need anything."
+  },
+  {
+    "id": 3,
+    "type": "Checked In",
+    "message": "Hello, ${name}. Again, welcome to ${hotelName}. We hope check-in went smoothly for you this ${timeOfDay} Please let us know if you have any questions about ${city} or if Room ${roomNumber} requires any attention."
+  }
+]
