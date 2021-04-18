@@ -1,4 +1,5 @@
 "use strict";
+
 console.log("script.js connected ");
 
 // dashboard variables
@@ -24,6 +25,11 @@ function init() {
 }
 
 init();
+
+sendMessageButton.addEventListener("click", function () {
+  init();
+  alert("The message has been sent to your guest.");
+});
 
 // event listeners/handlers for modal and overlay
 const openModal = function (e) {

@@ -51,11 +51,9 @@ $(document).ready(function () {
     });
 
     // event listener/handler for show guest info button/guest reservation information on dashboard
-    showGuestInfoButton.addEventListener("click", function (e) {
-      e.preventDefault();
+    $("#select-guest-message-code").change(function () {
       let guestCode = guestName.value;
       arr = guestArrayPull.find((el) => el.gCode == guestCode);
-      console.log("arr ", arr);
       if (!arr.company || !arr.city) {
         alert(
           "There is missing information in your guest's reservation file! Please seek remediation!"
@@ -74,7 +72,6 @@ $(document).ready(function () {
       let messageTypeValue = messageType.value;
       let currentDate = new Date();
       let currentHour = currentDate.getHours();
-      console.log("date & hours ", currentDate, currentHour);
       let timeOfDay;
       if (currentHour > 17) {
         timeOfDay = "evening";
@@ -83,15 +80,26 @@ $(document).ready(function () {
       } else {
         timeOfDay = "morning";
       }
-      console.log("timeOfDay ", timeOfDay);
 
       if (guestCodeValue !== "Select" && messageTypeValue !== "Select") {
         let msg = messagesArrayPull.find((el) => el.type == messageTypeValue);
+        let msgMessage = msg.message;
 
-        // TODO: get variables into msg.message string for display
-        let previewText = `${msg.message}`;
+        let templater = function (message, arr, time) {
+          let msg = message
+            .replace("timeOfDay", time)
+            .replace("firstName", arr.firstName)
+            .replace("company", arr.company)
+            .replace("city", arr.city)
+            .replace("roomNumber", arr.roomNumber);
+          console.log("temp msg ", msg);
+          return msg;
+        };
+
+        let previewText = templater(msgMessage, arr, timeOfDay);
 
         previewMessageText.textContent = previewText;
+
         modal.classList.remove("hidden");
         overlay.classList.remove("hidden");
       } else {
