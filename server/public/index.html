@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1>Guest Message Generator</h1>
+      </header>
+
+      <main id="container-form">
+        <form
+          id="guest-message-generator"
+          class="form-guest-messages"
+          action=""
+        >
+          <div id="div-guest-message-code">
+            <label
+              id="label-guest-message-code"
+              for="select-guest-message-code"
+              class="label-guest-messages"
+              >Please select your guest's reservation code:
+            </label>
+            <select
+              name="select-guest-message-code"
+              id="select-guest-message-code"
+            >
+              <option value="Select">Select</option>
+            </select>
+          </div>
+
+          <div id="guest-information">
+            <label
+              id="label-guest-information-p"
+              for="guest-information-p"
+              class="label-guest-messages"
+              >Your selected guest's reservation information:
+            </label>
+            <p id="guest-information-p"></p>
+            <button id="button-guest-information" class="button">
+              Show Guest Info
+            </button>
+          </div>
+
+          <div id="div-select-guest-message-type">
+            <label
+              id="label-guest-message-type"
+              for="select-guest-message-type"
+              class="label-guest-messages"
+              >Please select the message type to send your guest:
+            </label>
+            <select
+              name="select-guest-message-type"
+              id="select-guest-message-type"
+            >
+              <option value="Select">Select</option>
+            </select>
+          </div>
+
+          <div id="div-button-preview-message">
+            <button id="button-preview-message" class="button show-modal">
+              Preview Message
+            </button>
+            <input id="button-send-message" class="button" type="submit" value="Send Message"></input>
+          </div>
+        </form>
+      </main>
+
+      <div class="modal">
+        <p id="modal-message-text">Modal Message Text</p>
+        <button id="modal-button-close" class="button close-modal">
+          Close Preview
+        </button>
+      </div>
+
+      <div class="overlay"></div>
+    </div>
+
+    <script src="Guests.json" type="text/javascript"></script>
+    <script src="Companies.json" type="text/javascript"></script>
+    <script src="Messages.json" type="text/javascript"></script>
+    
+    <script src="./vendors/jquery.min.js"></script>
+    <script src="client.js" type="text/javascript"></script>
+    <script src="index.js" type="text/javascript"></script>
+  </body>
+</html>
