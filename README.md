@@ -12,7 +12,7 @@ The user of this application selects a reservation code comprised of a guest's n
 
 The user then selects a message type. There are several standard types (Reservation Made, Room Ready, Checked In), as well as a Custom message type which, when selected, presents the user with some information for using auto-replacement functionality to personalize and otherwise enhance their custom message.
 
-The user then previews their message before sending their message. They are notified that their message has been sent.
+The user must preview their message before it can be sent. They are notified that their message has been sent.
 
 ### Prerequisites
 
@@ -23,8 +23,8 @@ Before getting started, one must have the following software installed on one's 
 
 ### Dependencies
 
-- [Express]
-- [jQuery]
+- Express
+- jQuery
 
 ### Development Setup Instructions
 
