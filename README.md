@@ -26,34 +26,6 @@ Before getting started, one must have the following software installed on one's 
 - [Express]
 - [jQuery]
 
-### Snapshot of my package.json
-
-{
-"name": "kcodingproject",
-"version": "1.0.0",
-"main": "server.js",
-"scripts": {
-"test": "\"echo \\\"Error: no text specified\\\" && exit 1\"",
-"start": "node server/server.js",
-"server": "nodemon --watch server server/server.js"
-},
-"repository": {
-"type": "git",
-"url": "git+https://github.com/tyrichardson/kCodingProject.git"
-},
-"author": "Ty Richardson",
-"license": "ISC",
-"bugs": {
-"url": "https://github.com/tyrichardson/kCodingProject/issues"
-},
-"homepage": "https://github.com/tyrichardson/kCodingProject#readme",
-"description": "kcodingproject",
-"dependencies": {
-"express": "^4.17.1",
-"jquery": "^3.6.0"
-}
-}
-
 ### Development Setup Instructions
 
 - Run `npm install`
