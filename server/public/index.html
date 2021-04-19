@@ -56,7 +56,22 @@
               id="select-guest-message-type"
             >
               <option value="Select">Select</option>
+              <option id="custom-message-select-option" value="Custom">Custom</option>
             </select>
+          </div>
+
+          <div id="div-custom-message">
+            <label
+              id="label-custom-message-input"
+              for="custom-message-input"
+              class="label-guest-messages"
+              >Please type the custom message for your guest.<br>
+              Auto-replacement occurs when you use these keywords:<br>
+              timeOfDay, firstName, lastName, roomNumber, company, city<br>
+              For example: Good timeOfDay, firstName. Thank you again!<br>
+              will create: Good afternoon, Janet. Thank you again!
+            </label>
+            <textarea id="custom-message-input" name="custom-message-input" rows="5" cols="30"></textarea>
           </div>
 
           <div id="div-button-preview-message">

@@ -65,14 +65,25 @@ $(document).ready(function () {
       }
     });
 
+    // event listener/handler for custom message selection
+    $("#select-guest-message-type").change(function () {
+      if (guestName.value != "Select" && messageType.value == "Custom") {
+        customMessageDiv.classList.remove("hidden");
+      }
+    });
+
     // event listener/handler for preview message button/message preview text on modal
     previewMessageButton.addEventListener("click", function (e) {
       e.preventDefault();
       let guestCodeValue = guestName.value;
       let messageTypeValue = messageType.value;
+      let customMessageValue = customMessage.value;
+      let msg;
+      let msgMessage;
       let currentDate = new Date();
       let currentHour = currentDate.getHours();
       let timeOfDay;
+      let previewText;
       if (currentHour > 17) {
         timeOfDay = "evening";
       } else if (currentHour >= 12) {
@@ -80,30 +91,35 @@ $(document).ready(function () {
       } else {
         timeOfDay = "morning";
       }
+      let templater = function (message, array, time) {
+        msg = message
+          .replace("timeOfDay", time)
+          .replace("firstName", array.firstName)
+          .replace("lastName", array.lastName)
+          .replace("roomNumber", array.roomNumber)
+          .replace("company", array.company)
+          .replace("city", array.city);
+        console.log("temp msg ", msg);
+        return msg;
+      };
 
-      if (guestCodeValue !== "Select" && messageTypeValue !== "Select") {
-        let msg = messagesArrayPull.find((el) => el.type == messageTypeValue);
-        let msgMessage = msg.message;
-
-        let templater = function (message, arr, time) {
-          let msg = message
-            .replace("timeOfDay", time)
-            .replace("firstName", arr.firstName)
-            .replace("company", arr.company)
-            .replace("city", arr.city)
-            .replace("roomNumber", arr.roomNumber);
-          console.log("temp msg ", msg);
-          return msg;
-        };
-
-        let previewText = templater(msgMessage, arr, timeOfDay);
+      if (guestCodeValue == "Select" || messageTypeValue == "Select") {
+        alert("Please select guest code and message type.");
+      } else if (messageTypeValue == "Custom") {
+        customMessageDiv.classList.remove("hidden");
+        previewText = templater(customMessageValue, arr, timeOfDay);
 
         previewMessageText.textContent = previewText;
-
         modal.classList.remove("hidden");
         overlay.classList.remove("hidden");
       } else {
-        alert("Please select guest code and message type.");
+        msg = messagesArrayPull.find((el) => el.type == messageTypeValue);
+        msgMessage = msg.message;
+        previewText = templater(msgMessage, arr, timeOfDay);
+
+        previewMessageText.textContent = previewText;
+        modal.classList.remove("hidden");
+        overlay.classList.remove("hidden");
       }
     });
   });

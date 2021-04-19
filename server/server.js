@@ -9,6 +9,7 @@ let messagesArray = require("./public/Messages.json");
 let guestObjectsArray = require("./modules/guestObjectArray");
 
 console.log("messagesArrayPull ", messagesArray);
+console.log("guestObjectsArray", guestObjectsArray);
 
 app.get("/guests", (req, res) => {
   try {

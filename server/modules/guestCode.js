@@ -1,4 +1,5 @@
 "use strict";
+// generates a unique value per reservation
 
 function guestCode(array) {
   let guestCodeArray = [];

@@ -1,9 +1,6 @@
 "use strict";
 
-//let guestArray = require("../public/Guests.json");
 let companiesArray = require("../public/Companies.json");
-//let messagesArray = require("../public/Messages.json");
-//let guestCode = require("./guestCode");
 
 class Guest {
   constructor(gCode, id, firstName, lastName, roomNumber) {

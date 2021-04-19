@@ -6,6 +6,8 @@ console.log("script.js connected ");
 const guestName = document.getElementById("select-guest-message-code");
 const guestInfo = document.getElementById("guest-information-p");
 const messageType = document.getElementById("select-guest-message-type");
+const customMessage = document.getElementById("custom-message-input");
+const customMessageDiv = document.getElementById("div-custom-message");
 
 const showGuestInfoButton = document.getElementById("button-guest-information");
 const previewMessageButton = document.getElementById("button-preview-message");
@@ -19,6 +21,7 @@ const btnCloseModal = document.querySelector(".close-modal");
 
 // initialize state
 function init() {
+  customMessageDiv.classList.add("hidden");
   sendMessageButton.classList.add("hidden");
   modal.classList.add("hidden");
   overlay.classList.add("hidden");

@@ -1,12 +1,11 @@
 "use strict";
 
 let guestArray = require("../public/Guests.json");
-// let companiesArray = require("../public/Companies.json");
-
 let Guest = require("./GuestClass");
-let guestCode = require("./guestCode");
 
 // a unique value per reservation
+let guestCode = require("./guestCode");
+
 let guestCodeArray = guestCode(guestArray);
 
 let guestObjectsArray = [];

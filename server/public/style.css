@@ -60,6 +60,14 @@ p {
   margin: 0.25rem auto;
   width: 100%;
 }
+#label-custom-message-input {
+  font-size: 80%;
+}
+#custom-message-input {
+  background-color: whitesmoke;
+  margin: 0.25rem auto;
+  width: 100%;
+}
 button,
 .button {
   background-color: lemonchiffon;
