@@ -14,7 +14,26 @@ The user then selects a message type. There are several standard types (Reservat
 
 The user must preview their message before it can be sent. They are notified that their message has been sent.
 
-### Next version
+### Language used
+
+- I used Javascript for this project. It is the language I know the best, and it is specifically mentioned in the job description as part of the company's stack.
+- - Using Javascript, and creating a UI, allowed me to show some knowledge of additional web development tech (e.g., HTML, CSS...).
+- - I did not use a Javascript framework (e.g., React), because none was specifically mentioned in the job description. I chose to interpret that as a preference for Vanilla JS.
+- I used jQuery for this project specifically for access to $.ajax for HTTP requests, but then I used other jQuery functionality since I had it handy.
+- I used Node/Express for this project to separate concerns, specifically to process data outside of the browser/client environment.
+
+### Testing
+
+To test this application:
+
+- I manually tested the Happy Path, repeatedly.
+- I manually tested random paths, repeatedly.
+- I examined the UI / DOM updates at each step / code change.
+- I ran Nodemon to auto-restart Node after each server-side code change.
+- I manually refreshed the browser after code changes, frequently clearing the cache.
+- I used console logging in the browser (Chrome) and in Node (using the terminal in VS Code).
+
+### Next version / Had I more time
 
 In the next version of this application, I would:
 
@@ -24,6 +43,15 @@ In the next version of this application, I would:
 - - As stated above, this solution pairs the id numbers of Guests and Companies records as though they are shared keys matching guest reservations to locations.
 
 2. Increase validation measures take against user entry in the custom message textarea.
+
+- - In this version, < and > are converted to &lt and &gt.
+- - My solutions for validating against Regex on a keyup change event were not reliable.
+
+3. Work on componentizing code in client.js, which is very long and the contents of which depend upon being in a single function in order to share variables.
+
+4. More thoroughly audit for inclusion / accessibility.
+
+5. Improve the UI design / color pallette.
 
 ### Prerequisites
 
