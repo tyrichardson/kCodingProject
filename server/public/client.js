@@ -93,6 +93,8 @@ $(document).ready(function () {
       }
       let templater = function (message, array, time) {
         msg = message
+          .replaceAll("<", "&lt")
+          .replaceAll(">", "&gt")
           .replace("timeOfDay", time)
           .replace("firstName", array.firstName)
           .replace("lastName", array.lastName)

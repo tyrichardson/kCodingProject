@@ -21,6 +21,9 @@ const btnCloseModal = document.querySelector(".close-modal");
 
 // initialize state
 function init() {
+  guestName.value = "Select";
+  messageType.value = "Select";
+  customMessage.value = "";
   customMessageDiv.classList.add("hidden");
   sendMessageButton.classList.add("hidden");
   modal.classList.add("hidden");
